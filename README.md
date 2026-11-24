@@ -64,6 +64,13 @@ The browser calls the search API directly. Apple rate-limits it (roughly 20 requ
 per client), so for a high-traffic deployment put a caching proxy in front and point
 `VITE_APPSTORE_API_BASE` at it.
 
+## CI and deployment
+
+`.github/workflows/ci.yml` runs lint, tests, and a production build on every push. On `main` it
+also deploys the build to GitHub Pages. To turn that on, set **Settings → Pages → Source** to
+**GitHub Actions** (Pages on a private repository needs a paid GitHub plan; the published site is
+public either way). The site is then served at `https://<user>.github.io/<repo>/`.
+
 ## Tech stack
 
 [Vite](https://vite.dev) · [React](https://react.dev) · TypeScript ·
